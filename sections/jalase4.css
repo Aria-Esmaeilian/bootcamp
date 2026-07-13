@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: pink;
+}
+div{
+    width: 100%;
+    padding: 20px;
+}
+#img{
+    width: 100px;
+    height: 100px;
+}

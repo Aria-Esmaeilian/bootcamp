@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-left: 20px;
+    background-color: pink;
+}
+.colormatherfucker{
+    color: chocolate;
+}
+.color{
+    color:blueviolet !important;
+    direction: rtl;
+    text-decoration: dotted;
+    text-decoration-line:line-through ;
+    border-top-left-radius: 10px;
+    border: 10px 10px 10px 10px;
+    border: 10px 20px;
+}

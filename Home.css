@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+     font-family: "italic";
+    src: url(./assets/AlumniSansCollegiateOne-Italic.ttf);
+}
+@font-face {
+    font-family: "rgoularfont";
+    src: url(assets/gtafont.woff2);
+}
+body{
+    background-color: rgb(38, 38, 38);
+    height: 100vh;
+}
+header{
+    position: sticky;
+    width: 100%;
+    height: 70px;
+    background-color:  rgb(23, 23, 23);
+    padding: 0% 4.25%;
+    display: flex;
+    flex-direction: row;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    padding: 0px 4.25%;
+}
+.div1header{
+    display: flex;
+    flex-direction: row;
+}
+.namep{
+    font-family: "italic";
+    color: rgb(204, 204, 202);
+    font-size: 333%;
+    letter-spacing: 1px;
+}
+.namepcolor{
+        color:rgb(255, 102, 0);
+}
+.justmar{
+    margin-left:3%;
+
+}
+.divdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.inputdiv{
+    display: flex;
+    align-items: center;
+    width: 39%;
+    height: 100%;
+    margin-left: 5%;
+}
+input{
+    width: 100%;
+    height: 38px;
+    padding-left:13%;
+    font-size: 100%;
+    background-color: rgb(43, 43, 43);
+    border:1px solid rgb(62, 62, 62);
+    border-radius: 5px;
+    cursor: pointer;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+}
+input:hover{
+    background-color: rgb(56, 56, 56);
+    border:1px solid rgb(75, 75, 75);
+}
+::placeholder{
+    color: rgb(204, 204, 202);
+}
+.img{
+    position: absolute;
+    width:22px ;
+    height: 22px;
+    margin-left:0.5%;
+}
+.divdiv2{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+}
+.divbutton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 56%;
+}
+.button{
+    background-color: rgb(23, 23, 23);
+    color: rgb(204, 204, 202);
+    border: none;
+    border-radius:8px;
+    font-size: 100%;
+    width: 40%;
+    height:40px;
+    margin-left: 3%;
+    transition: all 0.2s;
+
+}
+.button:hover{
+    background-color: rgb(255, 102, 0);
+    color: rgb(236, 236, 236);
+
+}
+a{
+    text-decoration: none;
+    color:currentColor;
+}
+.aa{
+    padding: 15px 5px;
+}
+.divmain{
+    padding-right: 5%;
+    padding-top: 7px;
+    display: flex;
+    flex-direction: column;
+    color: rgb(204, 204, 202);
+    font-family: "rgoularfont";
+    row-gap: 5px;
+}
+.divh3{
+    display: flex;
+    margin-bottom: 12px;
+}
+.divinput{
+    width:auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    color: rgb(204, 204, 202);
+    width: 23%;
+    flex-grow: 1;
+    row-gap: 5px;
+    font-family: "rgoularfont";
+}
+.divinput2{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.input2{
+padding-left: 24%;
+}
+.ininput{
+    width: 100%;
+}
+.imginput{
+    position: absolute;
+    width:22px ;
+    height: 22px;
+    margin-left:0.5%;
+    margin-bottom: 8px;
+}
+.imginput2{
+    position: absolute;
+    width:22px ;
+    height: 22px;
+    margin-right:0.5%;
+    margin-bottom: 8px;
+    align-self: flex-end;
+}
+input{
+    color: rgb(204, 204, 202);
+}
+.divinputboutton{
+    width: 13%;
+    display: flex;
+}
+.imginput3{
+    margin-top: 8px;
+}
+.wraper{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+}
+.card{
+    width: 23%;
+    height: 216px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.cardimg{
+    width: 100%;
+}
+.textcord{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    flex-direction: row;
+    height: 100px;
+    opacity: 50%;
+    background-color: black;
+    color: rgb(204, 204, 202);
+}

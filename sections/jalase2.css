@@ -1,0 +1,17 @@
+#pink{
+    background-color: pink;
+    width: 60%;
+     
+}
+#black{
+    background-color: black;
+    width: 40%;
+    color: wheat;
+}
+div{
+    display: flex;
+    width: 100%;
+}
+body{
+    background-color: rgb(163, 161, 164);
+}

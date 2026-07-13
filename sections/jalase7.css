@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "italic";
+}
+@font-face {
+    font-family: "italic";
+    src: url(../assets/zomit.woff2);
+}
+body{
+    padding: 20px;
+    background-color: pink;
+}
+.box{
+    box-sizing: border-box;
+    margin-top: 20px;
+    display: flex;
+    flex-direction:column-reverse;
+    justify-content:center;
+    justify-items: center;
+    align-items: center;
+    order: 2;
+    align-self: flex-end;
+    justify-self: center;
+    flex-wrap: wrap-reverse;
+    flex-flow: column-reverse;
+    align-content: flex-end;
+}

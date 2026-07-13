@@ -1,0 +1,67 @@
+*{
+    font-family: "myfont1";
+}
+@font-face {
+    font-family: "myfornt1";
+    src: url(../assets/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq20ACIlsw.woff2);
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: pink;
+    padding: 20px;
+}
+.divmain{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 30px;
+    height:300px;
+}
+.div1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    font-size: 20px;
+    width: 10%;
+    height:120px;
+}
+.div0{
+    background-color: blue;
+    border-top-left-radius:30px ;
+    border-bottom-left-radius:30px ;
+}
+.div2{
+    background-image: linear-gradient(to right, blue,blueviolet);
+}
+.div3{
+    background-image: linear-gradient(to right, blueviolet,brown);
+}
+.div4{
+    background-image: linear-gradient(to right, brown, orange);
+}
+.div5{
+    background-image: linear-gradient(to right, orange,yellow);
+}
+.div6{
+    background-image: linear-gradient(to right, yellow,greenyellow);
+}
+.div7{
+    background-image: linear-gradient(to right, greenyellow,green);
+}
+.div8{
+    background-color: green;
+    border-top-right-radius:30px ;
+    border-bottom-right-radius:30px ;
+}
+.ww{
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    box-shadow: 10px 10px 10px 10px red;
+}

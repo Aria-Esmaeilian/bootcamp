@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: pink;
+    padding: 20px;
+}
+.wraper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.color{
+width: 200px;
+height: 200px;
+background-color: rgb(167, 189, 109);
+opacity: 40%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+transition: all 0.1s 0.3s  ease-in-out;
+cursor: pointer;
+}
+.color:hover{
+    background-color: rgb(124, 141, 82);
+    opacity: 50%;
+    border: 1px solid red;
+    transform: translate(10px,20px)  rotate(90deg);
+}
+.input:focus{
+    outline: 1px solid red;
+}
+.a{
+    color: rgb(167, 189, 109);
+}
+/* .a:visited{
+}
+.a:not(){
+} */
+p::first-letter{
+    color: red;
+}
+p::before{
+    content: "hi";
+}
+@keyframes identifier {
+    
+}

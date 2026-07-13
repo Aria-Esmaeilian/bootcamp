@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: pink;
+    padding: 20px;
+}
+div{
+    flex-wrap: wrap;
+    order: 0;
+    align-self: center;
+    justify-self: baseline;
+    align-items: stretch;
+    gap: 10px;
+    flex-flow: column wrap;
+    flex-shrink: 3;
+    flex-grow: 1;
+    align-content: end;
+}
+p{
+    margin: 10px;
+}

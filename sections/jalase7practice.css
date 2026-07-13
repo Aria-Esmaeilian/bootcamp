@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.w{
+    display: flex;
+    flex-direction: row;
+}
+.s{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
