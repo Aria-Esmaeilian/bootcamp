@@ -146,31 +146,3 @@
 // }else if(atp==="/"){
 //     console.log(a/b);
 // }
-
-// var a = 100;
-// while(a >=0){
-//     if(a%2==1){
-//         console.log(a)
-//     }
-//     a--
-// }
-
-// var a = 1;
-// var sum = 0;
-// while(a <=100){
-//     sum+=a
-//     a++
-// }
-// console.log(sum)
-
-var i = 0;
-var j;
-while (i <= 10) {
-  j = 10;
-  while ((j >= 1, j - i)) {
-    document.write("*");
-    j--;
-  }
-  document.write("<br>");
-  i++;
-}
