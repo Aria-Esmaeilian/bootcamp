@@ -221,4 +221,4 @@ function numberPattern(count) {
     document.write("<br>");
   }
 }
-numberPattern(150);
+numberPattern(5);
