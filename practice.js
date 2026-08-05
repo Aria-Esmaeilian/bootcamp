@@ -156,69 +156,199 @@
 
 //////////////////////////////////////////////////////////
 
-function test() {
-  return "hello world";
-}
-console.log(test());
+// function test() {
+//   return "hello world";
+// }
+// console.log(test());
 
-function square(num) {
-  return num ** 2;
-}
-console.log(square(6));
+// function square(num) {
+//   return num ** 2;
+// }
+// console.log(square(6));
 
-function max(a, b) {
-  if (a >= b) {
-    return a;
-  } else {
-    return b;
-  }
-}
-console.log(max(43, 12));
+// function max(a, b) {
+//   if (a >= b) {
+//     return a;
+//   } else {
+//     return b;
+//   }
+// }
+// console.log(max(43, 12));
 
-function star(cunt) {
-  var i = 1;
-  while (i <= cunt) {
-    console.log("*");
-    i++;
-  }
-}
-star(3);
+// function star(cunt) {
+//   var i = 1;
+//   while (i <= cunt) {
+//     console.log("*");
+//     i++;
+//   }
+// }
+// star(3);
 
-function check(count) {
-  if (count % 2 === 0) {
-    return "even";
-  } else {
-    return "odd";
-  }
-}
-console.log(check(46));
+// function check(count) {
+//   if (count % 2 === 0) {
+//     return "even";
+//   } else {
+//     return "odd";
+//   }
+// }
+// console.log(check(46));
 
-function pattern(num) {
-  var i = 1;
-  var j;
-  while (i <= num) {
-    var j = 1;
-    while (j <= i) {
-      document.write("*");
-      j++;
+// function pattern(num) {
+//   var i = 1;
+//   var j;
+//   while (i <= num) {
+//     var j = 1;
+//     while (j <= i) {
+//       document.write("*");
+//       j++;
+//     }
+//     i++;
+//     document.write("<br>");
+//   }
+// }
+// pattern(5);
+
+// function numberPattern(count) {
+//   var i = 0;
+//   var j;
+//   while (i < count) {
+//     j = 1;
+//     while (j <= count - i) {
+//       document.write(j + "");
+//       j++;
+//     }
+//     i++;
+//     document.write("<br>");
+//   }
+// }
+// numberPattern(5);
+
+// var students = [
+//   {
+//     name: "aria",
+//     course: ["HTML", "CSS", "java", "c++"],
+//   },
+//   {
+//     name: "ali",
+//     course: ["HTML", "react", "c++"],
+//   },
+//   {
+//     name: "sara",
+//     course: ["Js", "HTML", "java"],
+//   },
+//   {
+//     name: "babak",
+//     course: ["CSS", "react", "java"],
+//   },
+//   {
+//     name: "nafas",
+//     course: ["Js", "CSS", "c++"],
+//   },
+// ];
+
+// function number(jj) {
+//   for (var i = 0; i < students.length; i++) {
+//     if (students[i].name === jj) {
+//       return students[i].course.length;
+//     }
+//   }
+//   return "Student not found";
+// }
+// console.log(number("aria"));
+
+// function kgb(jj) {
+//   var count = 0;
+//   for (var i = 0; i < students.length; i++) {
+//     for (var j = 0; j < students[i].course.length; j++)
+//       if (students[i].course[j] === jj) {
+//         count++;
+//         break;
+//       }
+//   }
+//   return count;
+// }
+// console.log(kgb("Js"));
+
+// function studentsInCourse(num) {
+//   var ds = [];
+//   for (var i = 0; i < students.length; i++) {
+//     for (var j = 0; j < students[i].course.length; j++) {
+//       if (students[i].course[j] === num) {
+//         ds.push(students[i].name);
+//         break;
+//       }
+//     }
+//   }
+//   return ds;
+// }
+// console.log(studentsInCourse("HTML"));
+
+// function sameCourses(a, b) {
+//   var df = [];
+//   var st1 = [];
+//   var st2 = [];
+//   for (var i = 0; i < students.length; i++) {
+//     if (students[i].name === a) {
+//       st1 = students[i].course;
+//     } else if (students[i].name === b) {
+//       st2 = students[i].course;
+//     }
+//   }
+//   if (st1.length === 0 || st2.length === 0) {
+//     return "Student not found";
+//   }
+//   for (var j = 0; j < st1.length; j++) {
+//     for (var k = 0; k < st2.length; k++) {
+//       if (st1[j] === st2[k]) {
+//         df.push(st1[j]);
+//         break;
+//       }
+//     }
+//   }
+
+//   return df;
+// }
+// console.log(sameCourses("aria", "babak"));
+
+function allCourses() {
+  var ff = [];
+  for (var i = 0; i < students.length; i++) {
+    for (var j = 0; j < students[i].course.length; j++) {
+      var ht = false;
+      for (var g = 0; g < ff.length; g++) {
+        if (students[i].course[j] === ff[g]) {
+          ht = true;
+          break;
+        }
+      }
+      if (ht === false) {
+        ff.push(students[i].course[j]);
+      }
     }
-    i++;
-    document.write("<br>");
   }
+  return ff;
 }
-pattern(5);
+console.log(allCourses());
 
-function numberPattern(count) {
-  var i = 0;
-  var j;
-  while (i < count) {
-    j = 1;
-    while (j <= count - i) {
-      document.write(j + "");
-      j++;
-    }
-    i++;
-    document.write("<br>");
-  }
-}
-numberPattern(5);
+var students = [
+  {
+    name: "aria",
+    course: ["HTML", "CSS", "java", "c++"],
+  },
+  {
+    name: "ali",
+    course: ["HTML", "react", "c++"],
+  },
+  {
+    name: "sara",
+    course: ["Js", "HTML", "java"],
+  },
+  {
+    name: "babak",
+    course: ["CSS", "react", "java"],
+  },
+  {
+    name: "nafas",
+    course: ["Js", "CSS", "c++"],
+  },
+];
