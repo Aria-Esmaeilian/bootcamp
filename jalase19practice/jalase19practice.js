@@ -3,7 +3,9 @@ var papa = document.getElementById("papa");
 var num = document.getElementById("number");
 var ras = document.getElementById("rasa");
 function manes() {
-  if (num.innerHTML === "0") {
+  if (num.innerHTML === "1") {
+    num.style.color = "green";
+  } else if (num.innerHTML === "0") {
     num.style.color = "green";
   } else {
     num.style.color = "black";
@@ -13,7 +15,9 @@ function manes() {
   }
 }
 function pluse() {
-  if (num.innerHTML === "5") {
+  if (num.innerHTML === "4") {
+    num.style.color = "red";
+  } else if (num.innerHTML === "5") {
     num.style.color = "red";
   } else {
     num.style.color = "black";
