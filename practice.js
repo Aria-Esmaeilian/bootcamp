@@ -223,28 +223,28 @@
 // }
 // numberPattern(5);
 
-// var students = [
-//   {
-//     name: "aria",
-//     course: ["HTML", "CSS", "java", "c++"],
-//   },
-//   {
-//     name: "ali",
-//     course: ["HTML", "react", "c++"],
-//   },
-//   {
-//     name: "sara",
-//     course: ["Js", "HTML", "java"],
-//   },
-//   {
-//     name: "babak",
-//     course: ["CSS", "react", "java"],
-//   },
-//   {
-//     name: "nafas",
-//     course: ["Js", "CSS", "c++"],
-//   },
-// ];
+var students = [
+  {
+    name: "aria",
+    course: ["HTML", "CSS", "java", "c++"],
+  },
+  {
+    name: "ali",
+    course: ["HTML", "react", "c++"],
+  },
+  {
+    name: "sara",
+    course: ["Js", "HTML", "java"],
+  },
+  {
+    name: "babak",
+    course: ["CSS", "react", "java"],
+  },
+  {
+    name: "nafas",
+    course: ["Js", "CSS", "c++"],
+  },
+];
 
 // function number(jj) {
 //   for (var i = 0; i < students.length; i++) {
@@ -310,25 +310,55 @@
 // }
 // console.log(sameCourses("aria", "babak"));
 
-function allCourses() {
-  var ff = [];
+// function allCourses() {
+//   var ff = [];
+//   for (var i = 0; i < students.length; i++) {
+//     for (var j = 0; j < students[i].course.length; j++) {
+//       var ht = false;
+//       for (var g = 0; g < ff.length; g++) {
+//         if (students[i].course[j] === ff[g]) {
+//           ht = true;
+//           break;
+//         }
+//       }
+//       if (ht === false) {
+//         ff.push(students[i].course[j]);
+//       }
+//     }
+//   }
+//   return ff;
+// }
+// console.log(allCourses());
+
+// function courseStudents() {
+//   var clas = {};
+//   for (var i = 0; i < students.length; i++) {
+//     for (var j = 0; j < students[i].course.length; j++) {
+//       var red = students[i].course[j];
+//       if (clas[red] === undefined) {
+//         clas[red] = [];
+//       }
+//       clas[red].push(students[i].name);
+//     }
+//   }
+//   return clas;
+// }
+// console.log(courseStudents());
+
+function chikichiki() {
+  var all = {};
   for (var i = 0; i < students.length; i++) {
     for (var j = 0; j < students[i].course.length; j++) {
-      var ht = false;
-      for (var g = 0; g < ff.length; g++) {
-        if (students[i].course[j] === ff[g]) {
-          ht = true;
-          break;
-        }
+      var mama = students[i].course[j];
+      if (all[mama] === undefined) {
+        all[mama] = [];
       }
-      if (ht === false) {
-        ff.push(students[i].course[j]);
-      }
+      all[mama].push(students[i].name);
     }
   }
-  return ff;
+  return all;
 }
-console.log(allCourses());
+console.log(chikichiki());
 
 var students = [
   {
@@ -352,3 +382,25 @@ var students = [
     course: ["Js", "CSS", "c++"],
   },
 ];
+
+/////////////////////////////////////////
+
+// function split(nme) {
+//   var name = "";
+//   var lastName = "";
+//   var isLastName = false;
+
+//   for (var i = 0; i < nme.length; i++) {
+//     if (nme[i] === "_") {
+//       isLastName = true;
+//     } else if (isLastName === false) {
+//       name += nme[i];
+//     } else {
+//       lastName += nme[i];
+//     }
+//   }
+
+//   return [name, lastName];
+// }
+
+// console.log(split("aria_Esmaeilian"));
