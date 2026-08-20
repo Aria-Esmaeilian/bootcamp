@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="jalase20practice.css" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <header class="header">
+        <svg class="header-icon"></svg>
+        <h1 class="header-title">Product Manager</h1>
+        <p class="header-description">Manage your products easily</p>
+      </header>
+
+      <section class="top-section">
+        <div class="card product-form">
+          <div class="card-title">
+            <svg
+              class="header-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 3h18v18H3z" />
+              <path d="M7 8h10M7 12h10M7 16h6" />
+            </svg>
+            <p>Add / Edit product</p>
+          </div>
+
+          <div class="inputs">
+            <div class="input-group">
+              <label for="productName">Product Name</label>
+              <input
+                id="productName"
+                type="text"
+                placeholder="Enter product name"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="productPrice">Price</label>
+              <input
+                id="productPrice"
+                type="number"
+                placeholder="Enter price"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="productCategory">Category</label>
+              <input
+                id="productCategory"
+                type="text"
+                placeholder="Enter category"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="productQuantity">Quantity</label>
+              <input
+                id="productQuantity"
+                type="number"
+                placeholder="Enter quantity"
+              />
+            </div>
+          </div>
+
+          <div class="buttons">
+            <button
+              id="addBtn"
+              class="btn btn-add"
+              type="button"
+              onclick="handelclikadd()"
+            >
+              + Add product
+            </button>
+            <button
+              id="clearBtn"
+              class="btn btn-clear"
+              type="button"
+              onclick="handelclikclear()"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <div class="card filter">
+          <div class="card-title">
+            <svg
+              class="card-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L8 18l-4 1 1-4Z" />
+            </svg>
+            <p>Quick Filter</p>
+          </div>
+
+          <div class="filter-category">
+            <select onchange="filterCategory()" id="categoryFilter">
+              <option value="ALL">ALL</option>
+            </select>
+          </div>
+
+          <div class="or">
+            <span></span>
+            <p>OR</p>
+            <span></span>
+          </div>
+
+          <div class="search">
+            <label for="searchProduct">Search Product</label>
+            <input
+              oninput="searchProducts()"
+              id="searchProduct"
+              type="text"
+              placeholder="Search by name"
+              autocomplete="off"
+            />
+            <div id="suggestions" class="suggestions"></div>
+          </div>
+        </div>
+      </section>
+      <section class="card product-list">
+        <div class="card-title">
+          <svg
+            class="card-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 4h16l-6 7v6l-4 3v-9Z" />
+          </svg>
+
+          <p>Product List</p>
+
+          <span id="productCount">0 products</span>
+        </div>
+
+        <table id="productTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="products"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="jalase20practice.js"></script>
+  </body>
+</html>
