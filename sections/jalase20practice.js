@@ -173,5 +173,31 @@ function handelclikadd() {
   showProducts();
   showCategories();
 }
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+
+  var darkModeBtn = document.getElementById("darkModeBtn");
+
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+    darkModeBtn.innerHTML = "☀️ Light Mode";
+  } else {
+    localStorage.setItem("theme", "light");
+    darkModeBtn.innerHTML = "🌙 Dark Mode";
+  }
+}
+function loadTheme() {
+  var theme = localStorage.getItem("theme");
+  var darkModeBtn = document.getElementById("darkModeBtn");
+
+  if (theme === "dark") {
+    document.body.classList.add("dark");
+    darkModeBtn.innerHTML = "☀️ Light Mode";
+  } else {
+    document.body.classList.remove("dark");
+    darkModeBtn.innerHTML = "🌙 Dark Mode";
+  }
+}
 showProducts();
 showCategories();
+loadTheme();

@@ -332,3 +332,251 @@ body {
   background: #fee2e2;
   transform: translateY(-1px);
 }
+#darkModeBtn {
+  margin-top: 15px;
+  padding: 9px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#darkModeBtn:hover {
+  background: #f1f5f9;
+}
+
+body.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark .header-title {
+  color: #f8fafc;
+}
+
+body.dark .header-description {
+  color: #94a3b8;
+}
+
+body.dark .card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+body.dark .card-title {
+  border-color: #334155;
+}
+
+body.dark .card-title p {
+  color: #f8fafc;
+}
+
+body.dark .input-group label,
+body.dark .search label {
+  color: #cbd5e1;
+}
+
+body.dark .input-group input,
+body.dark .search input,
+body.dark .filter-category select {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+body.dark .input-group input:focus,
+body.dark .search input:focus,
+body.dark .filter-category select:focus {
+  background: #0f172a;
+}
+
+body.dark #productTable td {
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+body.dark #productTable tbody tr:hover {
+  background: #334155;
+}
+
+body.dark .btn-clear {
+  background: #334155;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+body.dark .btn-clear:hover {
+  background: #475569;
+}
+
+body.dark #darkModeBtn {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+body.dark .edit-btn {
+  background: #312e81;
+  color: #c7d2fe;
+}
+
+body.dark .edit-btn:hover {
+  background: #3730a3;
+  color: #ffffff;
+}
+
+body.dark .delete-btn {
+  background: #7f1d1d;
+  color: #fecaca;
+}
+
+body.dark .delete-btn:hover {
+  background: #991b1b;
+  color: #ffffff;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* var productName = document.getElementById("productName");
+var productPrice = document.getElementById("productPrice");
+var productCategory = document.getElementById("productCategory");
+var productQuantity = document.getElementById("productQuantity");
+
+var addBtn = document.getElementById("addBtn");
+var clearBtn = document.getElementById("clearBtn");
+
+var productsTable = document.getElementById("products");
+var categoryFilter = document.getElementById("categoryFilter");
+var suggestions = document.getElementById("suggestions");
+var searchProduct = document.getElementById("searchProduct");
+var productCount = document.getElementById("productCount");
+var editmode = -1;
+
+var darkModeBtn = document.getElementById("darkModeBtn");
+var products = JSON.parse(localStorage.getItem("user")) || [];
+
+function showproducts() {
+  document.getElementById("products").innerHTML = "";
+  for (var i = 0; i < products.length; i++) {
+    productsTable.innerHTML += `
+      <tr>
+      <td>${i + 1}</td>
+      <td>${products[i].name}</td>
+      <td>${products[i].category}</td>
+      <td>${products[i].price}</td>
+      <td>${products[i].quantity}</td>
+      <td>
+        <button class="edit-btn" onclick="handeledit(${i})">Edit</button>
+        <button class="delete-btn"onclick="handeldelete(${i})">Delete</button>
+      </td>
+    </tr>`;
+  }
+}
+function handelclikadd() {
+  var product = {
+    name: productName.value,
+    category: productCategory.value,
+    price: productPrice.value,
+    quantity: productQuantity.value,
+  };
+  if (
+    !productName.value.trim() ||
+    !productCategory.value.trim() ||
+    !productPrice.value ||
+    !productQuantity.value
+  ) {
+    alert("Please fill in the field.");
+    return;
+  }
+  for (var i = 0; i < products.length; i++) {
+    if (
+      productName.value === products[i].name &&
+      productCategory.value === products[i].category &&
+      productPrice.value === products[i].price &&
+      productQuantity.value === products[i].quantity
+    ) {
+      alert("Already added");
+      handelclikclear();
+      addBtn.innerHTML = "+ Add product";
+      return;
+    }
+  }
+  if (editmode !== -1) {
+    products[editmode].name = productName.value;
+    products[editmode].category = productCategory.value;
+    products[editmode].price = productPrice.value;
+    products[editmode].quantity = productQuantity.value;
+
+    localStorage.setItem("user", JSON.stringify(products));
+    addBtn.innerHTML = "+ Add product";
+    editmode = -1;
+    handelclikclear();
+    showproducts();
+    return;
+  }
+
+  products.push(product);
+  localStorage.setItem("user", JSON.stringify(products));
+  showproducts();
+}
+
+function handelclikclear() {
+  productName.value = "";
+  productCategory.value = "";
+  productPrice.value = "";
+  productQuantity.value = "";
+  addBtn.innerHTML = "+ Add product";
+}
+
+function handeldelete(index) {
+  var newproducts = [];
+  for (var i = 0; i < products.length; i++) {
+    if (i !== index) {
+      newproducts.push(products[i]);
+    }
+  }
+  products = newproducts;
+  localStorage.setItem("user", JSON.stringify(products));
+  showproducts();
+}
+
+function handeledit(index) {
+  var editproduvts = products[index];
+
+  productName.value = editproduvts.name;
+  productCategory.value = editproduvts.category;
+  productPrice.value = editproduvts.price;
+  productQuantity.value = editproduvts.quantity;
+
+  editmode = index;
+  addBtn.innerHTML = "Edit";
+}
+function showCategories() {
+  categoryFilter.innerHTML = `<option value="ALL">ALL</option>`;
+
+  for (var i = 0; i < products.length; i++) {
+    var categoryName = products[i].category;
+
+    var exists = false;
+
+    for (var j = 0; j < i; j++) {
+      if (products[j].category === categoryName) {
+        exists = true;
+        break;
+      }
+    }
+
+    if (exists === false) {
+      categoryFilter.innerHTML += `
+        <option value="${categoryName}">
+          ${categoryName}
+        </option>
+      `;
+    }
+  }
+}
+
+showproducts();
+showCategories(); */
