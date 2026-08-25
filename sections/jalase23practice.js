@@ -1,37 +1,27 @@
 let arr = [1, 2, 3, 4, 5];
 
-function all(array, callback) {
-  return callback(array);
-}
-
-function Jame(array) {
-  let jam = 0;
+function all(array, callback, bdcd = 0) {
+  var resalt = bdcd;
   for (let i = 0; i < array.length; i++) {
-    jam += array[i];
+    var resalt = callback(resalt, array[i]);
   }
-  return jam;
+  return resalt;
 }
 
-function Zarbe(array) {
-  let zarb = 1;
-  for (let i = 0; i < array.length; i++) {
-    zarb *= array[i];
-  }
-  return zarb;
+function Jame(a, b) {
+  return a + b;
 }
-
-function Tafrighe(array) {
-  let tafrigh = array[0];
-  for (let i = 1; i < array.length; i++) {
-    tafrigh -= array[i];
-  }
-  return tafrigh;
+function Zarbe(a, b) {
+  return a * b;
+}
+function Tafrighe(a, b) {
+  return a - b;
 }
 
 const showJam = all(arr, Jame);
 console.log(showJam);
 
-const showZarb = all(arr, Zarbe);
+const showZarb = all(arr, Zarbe, 1);
 console.log(showZarb);
 
 const showTafrigh = all(arr, Tafrighe);
