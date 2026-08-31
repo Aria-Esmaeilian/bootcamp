@@ -476,15 +476,16 @@ const showmapu = mapu.reduce((a, b) => {
 console.log(showmapu);
 
 //5
-// const janer = movies.map((item) => item.genre);
-// const res = janer.reduce((a, b) => {
-//   if (){
-
-//   }else{
-
-//   }
-// },);
-// console.log(res);
+const janer = movies.map((item) => item.genre);
+const res = janer.reduce((a, b) => {
+  if (a[b.genre]) {
+    a[b.genre]++;
+  } else {
+    a[b.genre] = 1;
+  }
+  return a;
+}, {});
+console.log(res);
 
 //6
 const atlist85 = movies.filter((item) => item.rating >= 8.5);
@@ -504,8 +505,8 @@ const findtitle = movies.map((item) => item.title);
 const dlete = findtitle.indexOf("The Matrix");
 if (dlete > -1) {
   movies.splice(dlete, 1);
-  console.log(movies);
 }
+console.log(movies);
 
 //9
 const findless6 = movies.filter((item) => item.price < 6);
