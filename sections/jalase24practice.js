@@ -1,4 +1,4 @@
-// push - pop - shift - unshift - find - some - every - sort - slice - map
+// push - pop - shift - unshift - find - some - every - sort - slice - map - includes
 const array = [1, 2, 3];
 
 const res = array.push(4, 5, 6);

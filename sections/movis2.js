@@ -452,155 +452,67 @@ const movies = [
 ];
 
 //1
-console.log(movies.map((item) => `${item.title} - ${item.year}`));
-
-//2
-// let maxPrice = movies[0].price;
-// let minPrice = movies[0].price;
-// let maxName = movies[0].title;
-// let minName = movies[0].title;
-// function rec(num) {
-//   for (let i = 0; i < movies.length; i++) {
-//     const item = movies[i];
-//     if (movies[i].price > maxPrice) {
-//       maxPrice = movies[i].price;
-//       maxName = movies[i].title;
-//     }
-
-//     if (movies[i].price < minPrice) {
-//       minPrice = movies[i].price;
-//       minName = movies[i].title;
-//     }
-//   }
-// }
-// rec();
-// console.log("Most expensive: ", maxName, maxPrice);
-// console.log("Cheapest: ", minName, minPrice);
-
-const maxmin = movies.sort((a, b) => a.price - b.price);
-console.log(`Cheapest: ${maxmin[0].price}`);
-console.log(`Most expensive: ${maxmin[maxmin.length - 1].price}`);
-
-//3
-const yearstart = movies.find((item) => item.title === "Interstellar");
-console.log(yearstart.year);
-
-//4
-const thescendfilme = movies.find((item) => item.title === "The Incredibles");
-console.log(
-  `rating ${thescendfilme.rating} duration ${thescendfilme.duration}`,
+movies.filter(
+  (item) => item.genre === "Drama" && item.year > 2015 && item.rating > 7.5,
 );
 
+//2
+const more150 = movies.filter((item) => item.duration > 150);
+const nametitle = more150.map((item) => item.title);
+console.log(nametitle.join(" & "));
+
+//3
+const reing = movies.map((item) => item.rating);
+const miyangin = reing.reduce((a, b) => a + b);
+const showww = miyangin / reing.length;
+console.log(showww);
+
+//4
+const mapu = movies.map((item) => item.price);
+const showmapu = mapu.reduce((a, b) => {
+  if (a < b) return b;
+  else return a;
+});
+console.log(showmapu);
+
 //5
-const exmor9 = movies.some((item) => item.rating > 9);
-console.log(exmor9);
+// const janer = movies.map((item) => item.genre);
+// const res = janer.reduce((a, b) => {
+//   if (){
+
+//   }else{
+
+//   }
+// },);
+// console.log(res);
 
 //6
-console.log(movies.some((item) => item.year > 2025));
+const atlist85 = movies.filter((item) => item.rating >= 8.5);
+const mapatlist = atlist85.map((item) => item.price);
+const tatib = atlist85.sort((a, b) => a.price - b.price);
+const mapatlist2 = atlist85.map((item) => item.title);
+console.log(mapatlist2.join(" & "));
 
 //7
-console.log(movies.some((gg) => gg.genre === "Comedy"));
+const action = movies.some((item) => item.genre === "Action");
+const drama = movies.some((item) => item.genre === "Drama");
+const comedy = movies.some((item) => item.genre === "Comedy");
+console.log(action && drama && comedy);
 
 //8
-console.log(movies.every((www) => www.price < 10));
+const findtitle = movies.map((item) => item.title);
+const dlete = findtitle.indexOf("The Matrix");
+if (dlete > -1) {
+  movies.splice(dlete, 1);
+  console.log(movies);
+}
 
 //9
-const maptars = movies.map((item) => item.genre);
-console.log(maptars.includes("Horror"));
-
-//10
-console.log(movies.sort((d, f) => d.rating - f.rating));
-
-//11
-function show2015() {
-  let res = [];
-  for (let i = 0; i < movies.length; i++) {
-    const item = movies[i];
-    if (item.year > 2015) {
-      res.push(item.title);
-    }
-  }
-  return res;
-}
-show2015();
-console.log(show2015());
-
-//12
-const result = movies.sort((a, b) => {
-  if (a.rating === b.rating) {
-    return a.price - b.price;
-  }
-
-  return b.rating - a.rating;
-});
-
-console.log(result);
-
-//13
-const add = movies.push({
-  id: 51,
-  title: "aria",
-  genre: "Sci-Fi",
-  year: 2026,
-  rating: 10,
-  price: 19,
-  duration: 13,
-});
-console.log(movies);
-
-//14 mean
-const chek = movies.map((item) => item.genre);
-const fifili = movies.some((item) => item.genre === "Fantasy");
-console.log(chek);
-console.log(fifili);
-
-//15
-function abadi() {
-  var res = [];
-  for (let i = 0; i < movies.length; i++) {
-    const item = movies[i];
-    if (item.rating >= 8.5) {
-      res.push(item);
-    }
-  }
-  return res;
-}
-console.log(abadi());
-
-//16
-function findMovie(rr) {
-  for (let i = 0; i < movies.length; i++) {
-    const item = movies[i];
-    if (item.title === rr) {
-      return `findMovie ${item.title}`;
-    }
-  }
-  return "Movie not found";
-}
-console.log(findMovie("Interstellar"));
-
-//17 pro
-function topMovies() {
-  const find = movies.filter((item) => item.rating >= 8.5);
-  const name = find.map((item) => item.title);
-  const tole = name.sort((a, b) => b.length - a.length);
-  const top5 = tole.slice(0, 5);
-  return top5;
-}
-console.log(topMovies());
-
-//18 promax
-function recommendMovies(genre, minRating) {
-  const category = movies.filter((item) => item.genre === genre);
-  const reating = category.filter((item) => item.rating >= minRating);
-  const eqval = reating.sort((a, b) => {
-    if (a.rating === b.rating) {
-      return a.price - b.price;
-    }
-    return b.rating - a.rating;
-  });
-  const top3 = eqval.slice(0, 3);
-  const show = top3.map((item) => item.title);
-  return show;
-}
-console.log(recommendMovies("Action", 8));
+const findless6 = movies.filter((item) => item.price < 6);
+const findmore9 = findless6.sort((a, b) => b.rating - a.rating);
+const findlesssd6 = findmore9.filter((item) => item.rating > 9);
+const findless150 = findlesssd6.filter((item) => item.duration < 150);
+const findless6map2 = findless150.map(
+  (item) => `${item.title} - ${item.rating}`,
+);
+console.log(findless6map2.join(" & "));
