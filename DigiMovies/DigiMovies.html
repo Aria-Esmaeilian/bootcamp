@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fa">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,72 @@
     <link rel="stylesheet" href="DigiMovies.css/digiMoviesmine.css" />
   </head>
   <body>
-    <p>dvcsdv</p>
+    <header>
+      <div class="filters">
+        <label>
+          ژانر:
+          <select id="genreFilter">
+            <option value="">همه</option>
+          </select>
+        </label>
+        <label>
+          کشور:
+          <select id="countryFilter">
+            <option value="">همه</option>
+          </select>
+        </label>
+        <label>
+          زبان:
+          <select id="languageFilter">
+            <option value="">همه</option>
+          </select>
+        </label>
+        <label>
+          رده سنی:
+          <select id="ageFilter">
+            <option value="">همه</option>
+          </select>
+        </label>
+        <label>
+          امتیاز IMDB:
+          <select id="ratingFilter">
+            <option value="">همه</option>
+          </select>
+        </label>
+        <label>
+          کارگردان:
+          <select id="directorFilter">
+            <option value="">همه</option>
+          </select>
+        </label>
+        <label>
+          از سال:
+          <select id="fromYear">
+            <option value="">همه</option>
+          </select>
+        </label>
+        <label>
+          تا سال:
+          <select id="toYear">
+            <option value="">همه</option>
+          </select>
+        </label>
+        <label>
+          ترتیب:
+          <select id="sortFilter">
+            <option value="">پر بازدید ترین ها</option>
+            <option value="">بیشترین امتیاز IMDB</option>
+            <option value="">بیشترین رای IMDB</option>
+          </select>
+        </label>
+        <button id="searchBtn" type="button" onclick="showproduct()">
+          جستجو
+        </button>
+      </div>
+    </header>
+    <div class="realewreaaepr" id="movies-container"></div>
+
+    <script src="DigiMovies.js/filter.js" type="module"></script>
+    <script src="DigiMovies.js/show.js" type="module"></script>
   </body>
 </html>

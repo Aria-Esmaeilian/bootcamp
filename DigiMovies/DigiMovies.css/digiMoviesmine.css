@@ -1,3 +1,217 @@
-p{
-    color: aqua;
+@font-face {
+  font-family: "iranfont";
+  src: url(../assets/zomit.woff2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(5, 5, 5);
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image:
+    url("../assets/back_one_head.webp"), url("../assets/back_two_head.webp");
+  background-size:
+    800px auto,
+    800px auto;
+  background-position:
+    left top,
+    right top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.realewreaaepr {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.movie-card {
+  background-color: rgb(36, 36, 36);
+  margin-bottom: 30px;
+  color: white;
+  font-family: "iranfont";
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.movie-card:hover {
+  transform: translateY(-2px);
+}
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  margin-left: 10px;
+}
+.spaapse {
+  border: 1px solid rgb(184, 184, 184);
+  width: 55px;
+  height: 1px;
+  margin-top: 1px;
+  margin-bottom: 8px;
+}
+.doble {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  background-color: rgb(139, 195, 74);
+  border-radius: 20px;
+  padding: 8px;
+  padding-left: 13px;
+  padding-right: 13px;
+  font-size: 14px;
+}
+.doble:hover {
+  transform: translateY(-2px);
+}
+.IMDB {
+  background-color: rgb(235, 131, 7);
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 900;
+}
+.IMDB:hover {
+  transform: translateY(-2px);
+}
+.imdb_rate {
+  font-weight: 900;
+}
+.movie-pecther {
+  border-radius: 20px;
+  margin: 20px;
+}
+.movie-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.detail-text {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.movie-description {
+  font-weight: 400;
+}
+.genres {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.genre {
+  padding: 4px 9px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.genre:hover {
+  transform: translateY(-2px);
+}
+header {
+  width: 95%;
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 15px;
+  background: rgb(36, 36, 36);
+  border-radius: 20px;
+  border: 1px solid #303030;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+.filters {
+  width: 100%;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  background: #181818;
+  border: 1px solid #303030;
+  border-radius: 16px;
+}
+.filters label {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 7px;
+  color: #bdbdbd;
+  font-family: "iranfont";
+  font-size: 13px;
+}
+.filters select {
+  width: 100%;
+  height: 45px;
+  padding: 0 14px;
+  color: #eee;
+  background: #242424;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  outline: none;
+  font-family: "iranfont";
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.filters select:hover {
+  background: #2b2b2b;
+  border-color: #555;
+  transform: translateY(-1px);
+}
+.filters select:focus {
+  border-color: #777;
+  background: #292929;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+}
+.filters option {
+  background: #242424;
+  color: white;
+}
+.filters > select {
+  min-width: 110px;
+  background: #eeeeee;
+  color: #111;
+  font-weight: bold;
+}
+.filters > select:hover {
+  background: #ffffff;
+}
+.filters button {
+  width: 100%;
+  height: 45px;
+  align-self: end;
+  border: none;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  font-family: "iranfont";
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.filters button:hover {
+  background: #cf7200;
+  transform: translateY(-2px);
+}
+.filters button:active {
+  transform: translateY(1px) scale(0.97);
 }
