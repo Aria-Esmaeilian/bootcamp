@@ -3,8 +3,10 @@ import * as detail from "./detail.js";
 
 const wraperdiv = document.getElementById("movies-container");
 
-const cards = movies.map((item, index) => {
-  return `
+export function showMovies(movieList) {
+  const cards = movieList.map((item) => {
+    const index = movies.indexOf(item);
+    return `
 <div class="movie-card">
     <div>
         <img class="movie-pecther" src="${item.pic.movie_img_s}" />
@@ -49,6 +51,7 @@ const cards = movies.map((item, index) => {
     </div>
 </div>
   `;
-});
-
-wraperdiv.innerHTML = cards.join("");
+  });
+  wraperdiv.innerHTML = cards.join("");
+}
+showMovies(movies);

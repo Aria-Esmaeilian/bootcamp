@@ -1,5 +1,13 @@
-import filter from "./filter.js";
 import movies from "./250_top_imdb.js";
+
+const genreFilter = document.getElementById("genreFilter");
+const countryFilter = document.getElementById("countryFilter");
+const languageFilter = document.getElementById("languageFilter");
+const ageFilter = document.getElementById("ageFilter");
+const ratingFilter = document.getElementById("ratingFilter");
+const directorFilter = document.getElementById("directorFilter");
+const fromYear = document.getElementById("fromYear");
+const toYear = document.getElementById("toYear");
 
 const gg = [];
 const genre = movies.filter((item) => item.categories);
@@ -7,7 +15,7 @@ genre.forEach((item) => {
   item.categories.forEach((item2) => {
     if (!gg.includes(item2.title_en))
       (gg.push(item2.title_en),
-        (genreFilter.innerHTML += `<option value="${item2.title}">
+        (genreFilter.innerHTML += `<option value="${item2.title_en}">
     ${item2.title}</option>`));
   });
 });
