@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #292929, #080808 55%);
+  color: white;
+}
+
+.countdown {
+  width: 700px;
+  padding: 50px 45px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.label {
+  margin-bottom: 35px;
+  color: #ff9d00;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 6px;
+}
+
+.time {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.time-box {
+  padding: 25px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.time-box span {
+  display: block;
+  font-size: 52px;
+  font-weight: bold;
+}
+
+.time-box small {
+  display: block;
+  margin-top: 12px;
+  color: #888;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.controls button {
+  min-width: 130px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 14px;
+  background: #242424;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.controls button:hover {
+  transform: translateY(-3px);
+  background: #333;
+}
+
+.controls button:active {
+  transform: scale(0.95);
+}
+
+#start {
+  background: #ff9d00;
+  color: #111;
+}
+
+#start:hover {
+  background: #ffb52e;
+}
+
+#pause {
+  background: #333;
+}
+
+#reset {
+  background: #5a2630;
+}
+
+#reset:hover {
+  background: #78333f;
+}
+
+@media (max-width: 700px) {
+  .countdown {
+    width: 90%;
+    padding: 35px 20px;
+  }
+
+  .time {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .controls button {
+    width: 100%;
+  }
+}
+.countdown:hover {
+  border: 1px solid #d9860055;
+}

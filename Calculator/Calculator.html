@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="display" readonly />
+
+      <div class="buttons">
+        <button id="clear" class="clear" onclick="clearDisplay()">AC</button>
+        <button id="delete" class="delete" onclick="deleteNumber()">⌫</button>
+        <button id="percent" class="operator" onclick="percentNumber()">
+          %
+        </button>
+        <button id="divide" class="operator" onclick="operator('/')">÷</button>
+
+        <button id="seven" onclick="addNumber('7')">7</button>
+        <button id="eight" onclick="addNumber('8')">8</button>
+        <button id="nine" onclick="addNumber('9')">9</button>
+        <button id="multiply" class="operator" onclick="operator('*')">
+          ×
+        </button>
+
+        <button id="four" onclick="addNumber('4')">4</button>
+        <button id="five" onclick="addNumber('5')">5</button>
+        <button id="six" onclick="addNumber('6')">6</button>
+        <button id="subtract" class="operator" onclick="operator('-')">
+          −
+        </button>
+
+        <button id="one" onclick="addNumber('1')">1</button>
+        <button id="two" onclick="addNumber('2')">2</button>
+        <button id="three" onclick="addNumber('3')">3</button>
+        <button id="add" class="operator" onclick="operator('+')">+</button>
+
+        <button id="zero" class="zero" onclick="addNumber('0')">0</button>
+        <button id="decimal" onclick="addNumber('.')">.</button>
+        <button id="equal" class="equal" onclick="calculate()">=</button>
+      </div>
+    </div>
+
+    <script src="Calculator.js/script.js"></script>
+  </body>
+</html>
