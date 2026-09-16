@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wallex</title>
+    <link rel="stylesheet" href="./wallex.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>بازار ارز دیجیتال</h1>
+    </header>
+
+    <main>
+      <div class="market-table">
+        <div class="table-header">
+          <div>ارز</div>
+          <div>قیمت تومان</div>
+          <div>تغییرات ۲۴ ساعت</div>
+          <div>قیمت USDT</div>
+          <div>ارزش بازار</div>
+          <div>عملیات</div>
+        </div>
+
+        <div id="holymoly"></div>
+
+        <div class="pagination">
+          <button id="prev">Previous</button>
+
+          <div id="pages"></div>
+
+          <button id="next">Next</button>
+        </div>
+
+        <div class="page-info" id="pageInfo"></div>
+      </div>
+    </main>
+
+    <div class="modal" id="coinModal">
+      <div class="modal-content">
+        <button class="close-modal" id="closeModal">×</button>
+
+        <div id="modalInfo"></div>
+      </div>
+    </div>
+
+    <script src="wallex.js" type="module"></script>
+  </body>
+</html>

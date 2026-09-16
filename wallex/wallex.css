@@ -1,0 +1,406 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(247, 147, 26, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(91, 80, 255, 0.08),
+      transparent 30%
+    ),
+    #0b0d10;
+  color: #fff;
+  direction: rtl;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  padding: 30px 7%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(11, 13, 16, 0.8);
+  backdrop-filter: blur(15px);
+}
+
+header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+main {
+  width: 88%;
+  max-width: 1500px;
+  margin: 45px auto;
+}
+
+.market-table {
+  width: 100%;
+  background: rgba(22, 25, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.table-header,
+.coin-row {
+  display: grid;
+
+  grid-template-columns:
+    2fr
+    1.4fr
+    1.3fr
+    1.4fr
+    1.5fr
+    1.3fr;
+
+  align-items: center;
+  gap: 25px;
+  padding: 20px 25px;
+}
+
+.table-header {
+  background: rgba(255, 255, 255, 0.025);
+  color: #858b95;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.coin-row {
+  min-height: 88px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.coin-row:last-child {
+  border-bottom: none;
+}
+
+.coin-row:hover {
+  background: rgba(255, 255, 255, 0.035);
+  transform: translateY(-1px);
+}
+
+.coin-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.coin-info img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.coin-info strong {
+  display: block;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.coin-info span {
+  display: block;
+  color: #777e89;
+  font-size: 12px;
+  direction: ltr;
+  text-align: right;
+}
+
+.coin-row > div:not(.coin-info) {
+  color: #e8eaed;
+  font-size: 14px;
+  font-weight: 500;
+  direction: ltr;
+  text-align: right;
+}
+
+.coin-row .change {
+  direction: ltr;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.coin-row .change.positive {
+  color: #22c55e;
+}
+
+.coin-row .change.negative {
+  color: #ff4d4d;
+}
+
+.coin-row .change.empty {
+  color: #e8eaed;
+}
+
+.coin-row button {
+  border: none;
+  outline: none;
+  background: rgb(176, 176, 176);
+  color: black;
+  padding: 11px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+  transition: all 0.25s ease;
+}
+
+.coin-row button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(244, 242, 241, 0.445);
+}
+
+.coin-row button:active {
+  transform: translateY(0);
+}
+
+.market-table {
+  overflow-x: auto;
+}
+
+.market-table::-webkit-scrollbar {
+  height: 6px;
+}
+
+.market-table::-webkit-scrollbar-track {
+  background: #111317;
+}
+
+.market-table::-webkit-scrollbar-thumb {
+  background: #30343b;
+  border-radius: 20px;
+}
+
+.pagination {
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.pagination button {
+  border: none;
+  background: #181b20;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination button:hover {
+  background: #252a31;
+}
+
+#pages {
+  display: flex;
+  gap: 8px;
+}
+
+#pages button.active {
+  color: #f7931a;
+}
+
+.pagination button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.page-info {
+  text-align: center;
+  margin-top: 10px;
+  color: #f9f9f9;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s ease;
+
+  z-index: 9999;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  width: 850px;
+  max-width: 100%;
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #15181d;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  padding: 30px;
+
+  position: relative;
+
+  transform: translateY(20px);
+  transition: 0.3s ease;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.close-modal {
+  position: absolute;
+
+  top: 15px;
+  left: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #252a31;
+  color: white;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  background: #333941;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 25px;
+  padding-left: 45px;
+}
+
+.modal-title img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.modal-title h2 {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.modal-title span {
+  color: #858b95;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.info-box {
+  background: #1c2026;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  border-radius: 12px;
+
+  padding: 18px;
+}
+
+.info-box span {
+  display: block;
+
+  color: #858b95;
+
+  font-size: 12px;
+
+  margin-bottom: 8px;
+}
+
+.info-box strong {
+  display: block;
+
+  color: white;
+
+  font-size: 14px;
+
+  direction: ltr;
+  text-align: right;
+
+  word-break: break-word;
+}
+
+@media (max-width: 1000px) {
+  main {
+    width: 94%;
+  }
+
+  .market-table {
+    overflow-x: auto;
+  }
+
+  .table-header,
+  .coin-row {
+    min-width: 950px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 25px 5%;
+  }
+
+  header h1 {
+    font-size: 23px;
+  }
+
+  main {
+    width: 94%;
+    margin-top: 25px;
+  }
+
+  .market-table {
+    border-radius: 15px;
+  }
+}

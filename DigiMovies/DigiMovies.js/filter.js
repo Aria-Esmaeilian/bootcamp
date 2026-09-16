@@ -1,5 +1,5 @@
 import movies from "./250_top_imdb.js";
-import { showMovies } from "./show.js";
+import { showPage } from "./show.js";
 
 const genreFilter = document.getElementById("genreFilter");
 const countryFilter = document.getElementById("countryFilter");
@@ -10,7 +10,6 @@ const directorFilter = document.getElementById("directorFilter");
 const fromYear = document.getElementById("fromYear");
 const toYear = document.getElementById("toYear");
 const sortFilter = document.getElementById("sortFilter");
-const all = document.getElementById("movies-container");
 const searchBtn = document.getElementById("searchBtn");
 
 function showproduct() {
@@ -77,7 +76,7 @@ function showproduct() {
     filteredMovies.sort((a, b) => b.duration.value - a.duration.value);
   }
 
-  showMovies(filteredMovies);
+  showPage(1, filteredMovies);
 }
 
 searchBtn.addEventListener("click", showproduct);
