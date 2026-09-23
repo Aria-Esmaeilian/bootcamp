@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="jalase32.css" />
+  </head>
+
+  <body>
+    <div id="mainPage" class="hidden">
+      <div class="utility">
+        <input id="input" class="input" placeholder="Search by Name" />
+        <input
+          id="deleteinput"
+          class="input"
+          placeholder="Delete By Id (by Enter)"
+        />
+        <select id="select" class="input"></select>
+        <button onclick="logout()">Logout</button>
+      </div>
+
+      <div id="conteiner" class="conteiner"></div>
+    </div>
+
+    <div id="loginBox">
+      <input id="username" placeholder="username" />
+      <input id="password" type="password" placeholder="password" />
+      <button onclick="login()">Login</button>
+      <p>username: emilys</p>
+      <p>password: emilyspass</p>
+    </div>
+
+    <script src="jalase32.js"></script>
+  </body>
+</html>

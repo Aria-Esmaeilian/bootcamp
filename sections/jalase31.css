@@ -1,0 +1,15 @@
+.divcan {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.imggp {
+  width: 300px;
+  height: 300px;
+}
+.users {
+  font-size: 20px;
+}
+.cord {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
