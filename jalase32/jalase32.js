@@ -30,12 +30,12 @@ async function getproduct() {
 function showproduct(item) {
   const getitem = item.map((item) => {
     return `
-      <div class="cord">
-        <p>Name : ${item.title}</p>
-        <p>Category : ${item.category}</p>
-        <p>Price : ${item.price}</p>
-        <p>Rating : ${item.rating}</p>
-        <p class="description">${item.description}</p>
+      <div class="bg-white p-5 rounded-xl border border-[#e5e5e5] shadow-[0_3px_10px_rgba(0,0,0,0.05)] transition duration-[0.2s] hover:-translate-y-[3px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)]">
+        <p class="my-[10px]">Name : ${item.title}</p>
+        <pclass="my-[10px]">Category : ${item.category}</pclass=>
+        <pclass="my-[10px]">Price : ${item.price}</pclass=>
+        <pclass="my-[10px]">Rating : ${item.rating}</pclass=>
+        <p class="text-[#666] leading-[1.5] line-clamp-2 overflow-hidden cursor-pointer">${item.description}</p>
       </div>
     `;
   });

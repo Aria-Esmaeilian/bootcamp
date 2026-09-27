@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Dashboard</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="m-0 font-[Arial,Helvetica,sans-serif] bg-[#f4f4f4] text-[#222]">
+    <div id="mainPage" class="hidden min-h-screen">
+      <div
+        class="sticky top-0 z-10 flex flex-wrap justify-center items-center gap-4 mb-10 p-6 bg-white/95 backdrop-blur-md border-b border-[#eaeaea] shadow-sm"
+      >
+        <input
+          id="input"
+          class="w-[220px] py-3 px-4 border border-[#e2e5ea] rounded-xl bg-[#f9fafb] text-sm outline-none transition duration-[0.2s] focus:bg-white focus:border-[#222] focus:shadow-[0_0_0_4px_rgba(0,0,0,0.06)]"
+          placeholder="Search by Name"
+        />
+        <input
+          id="deleteinput"
+          class="w-[220px] py-3 px-4 border border-[#e2e5ea] rounded-xl bg-[#f9fafb] text-sm outline-none transition duration-[0.2s] focus:bg-white focus:border-[#222] focus:shadow-[0_0_0_4px_rgba(0,0,0,0.06)]"
+          placeholder="Delete By Id (Enter)"
+        />
+        <select
+          id="select"
+          class="w-[220px] py-3 px-4 border border-[#e2e5ea] rounded-xl bg-[#f9fafb] text-sm outline-none cursor-pointer transition duration-[0.2s] focus:bg-white focus:border-[#222] focus:shadow-[0_0_0_4px_rgba(0,0,0,0.06)]"
+        ></select>
+        <button
+          onclick="logout()"
+          class="py-3 px-5 border-0 rounded-xl bg-[#222] text-white text-sm font-semibold cursor-pointer transition duration-[0.2s] hover:bg-[#444] hover:-translate-y-[2px] hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)]"
+        >
+          Logout
+        </button>
+      </div>
+      <div
+        id="conteiner"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-[1400px] mx-auto px-6 pb-10"
+      ></div>
+    </div>
+    <div
+      id="loginBox"
+      class="w-[360px] my-[120px] mx-auto p-8 bg-white rounded-2xl border border-[#eaeaea] shadow-[0_10px_40px_rgba(0,0,0,0.08)] flex flex-col gap-4"
+    >
+      <div class="text-center mb-3">
+        <h1 class="text-3xl font-bold text-[#222]">Welcome Back</h1>
+        <p class="text-sm text-[#777] mt-2">Login to continue</p>
+      </div>
+      <input
+        id="username"
+        class="p-3.5 border border-[#e2e5ea] rounded-xl outline-none bg-[#f9fafb] text-sm transition duration-[0.2s] focus:bg-white focus:border-[#222] focus:shadow-[0_0_0_4px_rgba(0,0,0,0.06)]"
+        placeholder="Username"
+      />
+      <input
+        id="password"
+        class="p-3.5 border border-[#e2e5ea] rounded-xl outline-none bg-[#f9fafb] text-sm transition duration-[0.2s] focus:bg-white focus:border-[#222] focus:shadow-[0_0_0_4px_rgba(0,0,0,0.06)]"
+        type="password"
+        placeholder="Password"
+      />
+      <button
+        onclick="login()"
+        class="w-full p-3.5 mt-2 border-0 rounded-xl bg-[#222] text-white text-sm font-semibold cursor-pointer transition duration-[0.2s] hover:bg-[#444] hover:-translate-y-[2px] hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)]"
+      >
+        Login
+      </button>
+      <div
+        class="mt-3 p-4 rounded-xl bg-[#f7f7f7] border border-[#eeeeee] text-center"
+      >
+        <p class="text-xs text-[#777] mb-1">Demo Account</p>
+        <p class="text-sm text-[#444]">
+          Username: <span class="font-semibold text-[#222]">emilys</span>
+        </p>
+        <p class="text-sm text-[#444] mt-1">
+          Password: <span class="font-semibold text-[#222]">emilyspass</span>
+        </p>
+      </div>
+    </div>
+    <script src="jalase32.js"></script>
+  </body>
+</html>
